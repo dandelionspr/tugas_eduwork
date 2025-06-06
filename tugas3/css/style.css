@@ -1,0 +1,197 @@
+/* Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 20px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #16f9a9;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+  color: #16f9a9;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background: #f9fafb;
+}
+
+.header-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.header-text h2 {
+  font-size: 1.5rem;
+  color: #444;
+}
+
+.header-text h2 span {
+  color: #16f9a9;
+}
+
+.header-text .title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #222;
+}
+
+.header-text p {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  color: #16f9a9;
+  color: rgb(19 10 45);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  color: #1630f9;
+}
+
+.header-image {
+  flex: 1;
+  text-align: center;
+}
+
+.header-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* About */
+.about {
+  padding: 60px 40px;
+  background: #fff;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: #111;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.biodata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.biodata-grid div {
+  background: #f3f4f6;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.biodata-grid i {
+  color: #16f9a9;
+  font-size: 1.2rem;
+}
+
+/* Portfolio */
+.portfolio {
+  padding: 60px 40px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.project {
+  width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project p {
+  padding: 15px;
+  font-size: 0.95rem;
+  text-align: left;
+}
