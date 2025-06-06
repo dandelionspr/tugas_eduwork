@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple E-Commerce</title>
+</head>
+<body>
+
+  <h1>Daftar Produk</h1>
+
+  <div class="filter">
+    <button onclick="filterProducts('all', this)" class="active">Semua</button>
+    <button onclick="filterProducts('buah', this)">Buah</button>
+    <button onclick="filterProducts('sayur', this)">Sayur</button>
+  </div>
+
+  <div id="productList"></div>
+
+  <script>
+    const products = [
+      {
+        nama: "Apel Merah",
+        harga: 15000,
+        deskripsi: "Apel segar dari Malang.",
+        gambar: "img/apel.jpg",
+        kategori: "buah"
+      },
+      {
+        nama: "Wortel Segar",
+        harga: 10000,
+        deskripsi: "Wortel sehat kaya vitamin A.",
+        gambar: "img/wortel.jpg",
+        kategori: "sayur"
+      },
+      {
+        nama: "Jeruk Manis",
+        harga: 12000,
+        deskripsi: "Jeruk manis dan segar.",
+        gambar: "img/jeruk.jpg",
+        kategori: "buah"
+      },
+      {
+        nama: "Bit",
+        harga: 7000,
+        deskripsi: "Bit segar.",
+        gambar: "img/bit.jpg",
+        kategori: "sayur"
+      }
+    ];
+
+    function displayProducts(filteredProducts) {
+      const productList = document.getElementById("productList");
+      productList.innerHTML = "";
+      filteredProducts.forEach(product => {
+        productList.innerHTML += `
+          <div>
+            <img src="${product.gambar}" alt="${product.nama}" width="150"><br>
+            <strong>${product.nama}</strong><br>
+            <span>${product.deskripsi}</span><br>
+            <span>Rp ${product.harga.toLocaleString()}</span><br><br>
+          </div>
+        `;
+      });
+    }
+
+    function filterProducts(kategori, clickedButton) {
+      const buttons = document.querySelectorAll(".filter button");
+      buttons.forEach(btn => btn.style.fontWeight = "normal");
+      clickedButton.style.fontWeight = "bold";
+
+      if (kategori === "all") {
+        displayProducts(products);
+      } else {
+        const filtered = products.filter(p => p.kategori === kategori);
+        displayProducts(filtered);
+      }
+    }
+
+    displayProducts(products);
+  </script>
+</body>
+</html>
